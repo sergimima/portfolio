@@ -46,12 +46,8 @@ RUN npm install --verbose
 # Copia el resto del código de la aplicación
 COPY . .
 
-# Copia los scripts de construcción y polyfills
-COPY build.js .
-COPY polyfills.js .
-
-# Construye la aplicación usando el script
-RUN node build.js
+# Construye la aplicación
+RUN npm run build
 
 # Puerto en el que se ejecutará la aplicación
 EXPOSE 3000
