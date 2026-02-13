@@ -1,0 +1,12 @@
+services:
+  app:
+    build:
+      context: .
+      args:
+        GMAIL_APP_PASSWORD: ${GMAIL_APP_PASSWORD}
+    container_name: portfolio
+    restart: always
+    ports:
+      - "3001:3000"
+    env_file:
+      - .env
